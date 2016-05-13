@@ -23,7 +23,7 @@ class ProjectsController < ApplicationController
     @project.users = [current_user]
     if @project.save
       flash[:notice] = "New project added: #{@project.name}"
-      redirect_to project_path(@project)
+      redirect_to projects_path
     else
       flash[:error] = @project.errors.full_messages.join(". ") + "."
       render :new
