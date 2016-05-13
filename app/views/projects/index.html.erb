@@ -1,0 +1,11 @@
+<ul>
+  <% Project.all.each do |project| %>
+    <li>Project: <%= project.name %>
+      <ul>
+        <li>Owners: <%= project.users %></li>
+        <li>Status: <%= project.status %></li>
+        <li>Description: <%= project.description %></li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
