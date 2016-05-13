@@ -20,8 +20,9 @@
           <a href="#">Projects</a>
           <ul class="submenu menu vertical" data-submenu>
             <li><%= link_to 'All', projects_path(status: "all") %></li>
-            <li><%= link_to 'Active', projects_path(status: "active") %></li>
-            <li><%= link_to 'Inactive', projects_path(status: "inactive") %></li>
+            <li><%= link_to 'Completed', projects_path(status: "completed") %></li>
+            <li><%= link_to 'Active', projects_path(status: "in development") %></li>
+            <li><%= link_to 'Brainstorming', projects_path(status: "brainstorming") %></li>
           </ul>
         </li>
         <li><a href="#">Users</a></li>

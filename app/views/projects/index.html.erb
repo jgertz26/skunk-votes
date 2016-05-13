@@ -1,8 +1,8 @@
 <ul>
-  <% Project.all.each do |project| %>
+  <% @projects.each do |project| %>
     <li>Project: <%= project.name %>
       <ul>
-        <li>Owners: <%= project.users %></li>
+        <li>Owner(s): <%= project.users[0].email %></li>
         <li>Status: <%= project.status %></li>
         <li>Description: <%= project.description %></li>
       </ul>
