@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.users = [current_user]
     if @project.save
       flash[:notice] = "New project added: #{@project.name}"
       redirect_to project_path(@project)
@@ -36,5 +37,11 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def project_params
+    params.require(:project).permit(:name, :status, :description)
   end
 end

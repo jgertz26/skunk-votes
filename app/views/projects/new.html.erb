@@ -1,2 +1,13 @@
-<h1>ProjectsController#new</h1>
-<p>Find me in app/views/projects_controller/new.html.erb</p>
+<h1>New Project</h1>
+<%= form_for @project do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :status %>
+  <%= f.select :status, [["Completed", "completed"],["In Development", "in development"],["Brainstorming", "brainstorming"]] %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.submit %>
+<% end %>
