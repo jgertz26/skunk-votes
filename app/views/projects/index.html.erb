@@ -1,0 +1,13 @@
+<ul>
+  <% @projects.each do |project| %>
+    <li>Project: <%= project.name %>
+      <ul>
+        <li>Owner(s): <%= project.users[0].email %></li>
+        <li>Status: <%= project.status %></li>
+        <li>Description: <%= project.description %></li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Project", new_project_path, class: "button" %>
